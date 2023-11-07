@@ -4,13 +4,15 @@
 To analyze the performance of Hollywood movies 
 
 # Data: 
-Title, genre, studio, profitability and ratings for movies released 2007-2012. Source: InformationIsBeautiful.net 
+Title, genre, studio, profitability and ratings for movies released 2007-2012. 
+
+# Source: InformationIsBeautiful.net 
 
 # Download data from this link:  
 https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv
 
 # Data Source:  
-HollywoodsMostProfitableStories.csv 
+A part of HollywoodsMostProfitableStories.csv 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/48013f6b-c146-4d38-845f-13066cf2c37f)
  
 
