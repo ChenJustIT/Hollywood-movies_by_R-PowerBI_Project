@@ -1,4 +1,4 @@
-# R-Power-BI-Project
+# R&PowerBI Project
                                           
 # Aim: 
 To analyze the performance of Hollywood movies 
