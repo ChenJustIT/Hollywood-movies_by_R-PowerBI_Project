@@ -1,37 +1,37 @@
 # Hollywood-movies_by_R-PowerBI_Project
                                           
-# Aim: 
+## Aim: 
 To analyze the performance of Hollywood movies 
 
-# Data: 
+## Data: 
 Such as Title, genre, studio, profitability and ratings for movies released 2007-2012. 
 
-# Source: 
+## Source: 
 InformationIsBeautiful.net 
 
-# You can download data from this link:  
+## You can download data from this link:  
 https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv
 
-# Data Source:  
+## Data Source:  
 A screenshoot of a part of HollywoodsMostProfitableStories.csv 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/48013f6b-c146-4d38-845f-13066cf2c37f)
  
 
 # Step1: Initial Exploratory Analysis by R
 
-# Load data 
+## Load data 
 df<- read.csv("https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv")
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/3a1260b8-a18c-442e-8e60-3b62cdd58401)
 
  
 
-# Take a look at the data: 
+## Take a look at the data: 
 
 View(df)
 
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/5ebae422-8a8b-4a14-8fb4-9026698c66c3)
 
-# Load library: 
+## Load library: 
 install.packages("tidyverse")
 
 WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
@@ -45,7 +45,7 @@ package ‘tidyverse’ successfully unpacked and MD5 sums checked
 The downloaded binary packages are in
 C:\Users\solve\AppData\Local\Temp\RtmpApsExq\downloaded_packages
 
-# Import library 
+## Import library 
 library(tidyverse)
 
 ── Attaching core tidyverse packages ───────────────────────── tidyverse 2.0.0 ──
@@ -61,35 +61,35 @@ library(tidyverse)
 Warning message:
 package ‘tidyverse’ was built under R version 4.3.2
 
-# Check data types: 
+## Check data types: 
 str(df)
 
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/28936e2a-c244-4a6c-8c90-284774877b1d)
 
 #  Step 2: Clean Data 
 
-# Check for missing values:
+## Check for missing values:
 colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/4bf8a342-5369-461f-a677-488e7298ceb5)
 
   
-# If we continue to drop the missing values normally by drop function below, we will find that one missing value still exists in the column, Lead. Studio, although it looks like a blank cell in the original data source of the Excel sheet as the other missing values. However, it is a still blank cell when we check them by the view function after the data source is imported on R, but others contain NA. The course that the missing value cannot be found by colSums(is.na(df)) is that it is a blank as “”, not NA as usual.
+### If we continue to drop the missing values normally by drop function below, we will find that one missing value still exists in the column, Lead. Studio, although it looks like a blank cell in the original data source of the Excel sheet as the other missing values. However, it is a still blank cell when we check them by the view function after the data source is imported on R, but others contain NA. The course that the missing value cannot be found by colSums(is.na(df)) is that it is a blank as “”, not NA as usual.
 
-# so, we will use another function to find number of empty strings
+## so, we will use another function to find number of empty strings
 map_int(df, function(x) sum(x == ""))
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/2b4e4eb5-395c-46e9-9872-8f86542e6702)
 
-# replace empty string with NA
+## replace empty string with NA
 df[df==""]<-NA
 
-# Check for missing values again:
+## Check for missing values again:
 colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/2ef066ef-a010-4e77-a529-1b4193ab5539)
 
-# Drop missing values 
+## Drop missing values 
 df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use subset function
 
-# check to make sure that the rows have been removed 
+## check to make sure that the rows have been removed 
  colSums(is.na(df))
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/3774c77e-203a-4fe6-aa09-63b4c751630a)
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/e776de51-6c5d-416b-bc2f-33d8d6d26b16)
@@ -98,20 +98,20 @@ df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use su
 
 # Step 3: Exploratory Data Analysis 
 
-# Create df1
+## Create df1
 df1=na.omit(df) 
 
-# Summary Statistics: 
+## Summary Statistics: 
 summary(df1)
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/a0e6e1d2-6e2d-40c9-8c9f-396e4828ef68)
   
-# scatterplot 
+## scatterplot 
 ggplot(df1, aes(x=Lead.Studio, y=Rotten.Tomatoes..)) + geom_point()+ scale_y_continuous(labels = scales::comma)+coord_cartesian(ylim = c(0, 110))+theme(axis.text.x = element_text(angle = 90))
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/fc516ba1-3d98-42ea-9ee1-c5617fb1f842)
 
- # bar chart 
+ ## bar chart 
 ggplot(df1, aes(x=Year)) + geom_bar()
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9b0f659a-38ab-437c-8c95-8ddfc6e0590d)
@@ -119,17 +119,17 @@ ggplot(df1, aes(x=Year)) + geom_bar()
  
 # Step 4: Export data 
 
-# Export clean data 
+## Export clean data 
 write.csv(df1, "clean_df.csv") 
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
 
  
-# Then, I import this file clean_df into Power BI to go to the next step 5.
+ Then, I import this file clean_df into Power BI to go to the next step 5.
 
 # Step 5: Create Power BI Dashboard 
 
-# Tips: 
+### Tips: 
 •	Feel free to add more charts apart from the ones mentioned in the next slide.  
 • For the dashboard, the company would like you to use their brand colors which are 
   blue, green and brown. You can use light or dark shades of each color. For example, 
@@ -137,22 +137,22 @@ write.csv(df1, "clean_df.csv")
   You can combine these colors any way that you like. For example, you can use only 
   blue and green if you want to. 
 
-# 1.	The average Rotten Tomatoes ratings of each genre
+## 1.	The average Rotten Tomatoes ratings of each genre
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9605de70-d47a-4548-bf9b-df048d6ea5f4)
 
-# 2.	The number of movies produced per year 
+## 2.	The number of movies produced per year 
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/c3359c69-f0e9-4383-937e-b327a748aec8)
  
-# 3.	The audience scores for each film  
+## 3.	The audience scores for each film  
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/301bf56a-4c60-4591-ba5d-5160a185e6f5)
      
-# 4.	The profitability per studio      
+## 4.	The profitability per studio      
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/f30ae7ee-5ace-4714-9d8e-8ed414d4edd1)
     
-# 5.	The worldwide gross per genre 
+## 5.	The worldwide gross per genre 
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/cc2057b2-c39b-453e-8dc3-7141e79e4ba0)
                 
-# 6.	Dashboard
+## 6.	Dashboard
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/c0c0d221-b7cd-4666-b7e3-aa31aeb6d97e)
 
 
