@@ -4,20 +4,20 @@
 To analyze the performance of Hollywood movies 
 
 # Data: 
-Title, genre, studio, profitability and ratings for movies released 2007-2012. 
+Such as Title, genre, studio, profitability and ratings for movies released 2007-2012. 
 
 # Source: 
 InformationIsBeautiful.net 
 
-# Download data from this link:  
+# You can download data from this link:  
 https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv
 
 # Data Source:  
-A part of HollywoodsMostProfitableStories.csv 
+A screenshoot of a part of HollywoodsMostProfitableStories.csv 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/48013f6b-c146-4d38-845f-13066cf2c37f)
  
 
-                                       Step1: Initial Exploratory Analysis
+# Step1: Initial Exploratory Analysis by R
 
 # Load data 
 df<- read.csv("https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv")
@@ -66,7 +66,7 @@ str(df)
 
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/28936e2a-c244-4a6c-8c90-284774877b1d)
 
-                                 Step 2: Clean Data 
+#  Step 2: Clean Data 
 
 # Check for missing values:
 colSums(is.na(df))
@@ -96,7 +96,8 @@ df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use su
 
  
 
-                                               Step 3: Exploratory Data Analysis 
+# Step 3: Exploratory Data Analysis 
+
 # Create df1
 df1=na.omit(df) 
 
@@ -116,7 +117,8 @@ ggplot(df1, aes(x=Year)) + geom_bar()
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9b0f659a-38ab-437c-8c95-8ddfc6e0590d)
 
  
-                                                         Step 4: Export data 
+# Step 4: Export data 
+
 # Export clean data 
 write.csv(df1, "clean_df.csv") 
 
@@ -125,7 +127,7 @@ write.csv(df1, "clean_df.csv")
  
 # Then, I import this file clean_df into Power BI to go to the next step 5.
 
-                                    Step 5: Create Power BI Dashboard 
+# Step 5: Create Power BI Dashboard 
 
 # Tips: 
 •	Feel free to add more charts apart from the ones mentioned in the next slide.  
