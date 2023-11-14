@@ -1,7 +1,7 @@
-# Hollywood-movies_by_R-PowerBI
+# Hollywood_movies
                                           
 ## Aim: 
-To analyze the performance of Hollywood movies 
+To analyze the performance of Hollywood movies with **cleansing data by R and creating visuals by Power BI**
 
 ## Source: 
 InformationIsBeautiful.net 
