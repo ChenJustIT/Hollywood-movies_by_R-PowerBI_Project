@@ -16,7 +16,7 @@ https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv
  
 # Step1: Initial Exploratory Analysis by R
 
-## Import data 
+## Import the data 
 **df**<- read.csv("https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv")
 
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/3a1260b8-a18c-442e-8e60-3b62cdd58401)
@@ -29,7 +29,7 @@ View(df)
 
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/5ebae422-8a8b-4a14-8fb4-9026698c66c3)
 
-## Load library: 
+## Load the library: 
 install.packages(**"tidyverse"**)
 
 WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
@@ -43,7 +43,7 @@ package ‘tidyverse’ successfully unpacked and MD5 sums checked
 The downloaded binary packages are in
 C:\Users\solve\AppData\Local\Temp\RtmpApsExq\downloaded_packages
 
-## Import library 
+## Import the library 
 library(**tidyverse**)
 
 ── Attaching core tidyverse packages ───────────────────────── tidyverse 2.0.0 ──
@@ -59,14 +59,14 @@ library(**tidyverse**)
 Warning message:
 package ‘tidyverse’ was built under R version 4.3.2
 
-## Check data types: 
+## Check the data types: 
 str(df)
 
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/28936e2a-c244-4a6c-8c90-284774877b1d)
 
-#  Step 2: Clean Data 
+#  Step 2: Clean the Data 
 
-## Check for missing values:
+## Check for the missing values:
 colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/4bf8a342-5369-461f-a677-488e7298ceb5)
 
@@ -77,14 +77,14 @@ colSums(is.na(df))
 map_int(df, function(x) sum(x == ""))
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/2b4e4eb5-395c-46e9-9872-8f86542e6702)
 
-## Replace empty string with NA
+## Replace the empty string with NA
 df[df==""]<-NA
 
-## Check for missing values again:
+## Check for the missing values again:
 colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/2ef066ef-a010-4e77-a529-1b4193ab5539)
 
-## Drop missing values 
+## Drop the missing values 
 df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use subset function
 
 ## Check to make sure that the rows have been removed 
@@ -96,7 +96,7 @@ df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use su
 
 # Step 3: Exploratory Data Analysis 
 
-## Create cleaned data df1
+## Create the cleaned data df1
 **df1**=na.omit(df) 
 
 ## Summary Statistics: 
@@ -117,7 +117,7 @@ ggplot(df1, aes(x=Year)) + geom_bar()
  
 # Step 4: Export data 
 
-## Export clean data 
+## Export the clean data 
 write.csv(df1, "**clean_df.csv**") 
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
