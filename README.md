@@ -3,20 +3,17 @@
 ## Aim: 
 To analyze the performance of Hollywood movies 
 
-## Data: 
-Such as Title, genre, studio, profitability and ratings for movies released 2007-2012. 
-
 ## Source: 
 InformationIsBeautiful.net 
 
 ## You can download data from this link:  
 https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv
 
-## Data Source:  
-A screenshoot of a part of HollywoodsMostProfitableStories.csv 
+## Data:  
+**It is an Excel sheet, HollywoodsMostProfitableStories.csv, for movies released between 2007 and 2012**
+
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/48013f6b-c146-4d38-845f-13066cf2c37f)
  
-
 # Step1: Initial Exploratory Analysis by R
 
 ## Load data 
