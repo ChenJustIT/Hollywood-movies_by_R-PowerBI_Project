@@ -1,4 +1,4 @@
-# Hollywood-movies_by_R-PowerBI_Project
+# Hollywood-movies_by_R-PowerBI
                                           
 ## Aim: 
 To analyze the performance of Hollywood movies 
@@ -73,13 +73,13 @@ colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/4bf8a342-5369-461f-a677-488e7298ceb5)
 
   
-### If we continue to drop the missing values normally by drop function below, we will find that one missing value still exists in the column, Lead. Studio, although it looks like a blank cell in the original data source of the Excel sheet as the other missing values. However, it is a still blank cell when we check them by the view function after the data source is imported on R, but others contain NA. The course that the missing value cannot be found by colSums(is.na(df)) is that it is a blank as “”, not NA as usual.
+### During this process, we should realise that missing values include both blank values and Null values. The function "map_int" can find both kinds and the blank value should be replaced with NA before all the missing values can be dropped together. 
 
-## so, we will use another function to find number of empty strings
+## Use the function to find all missing values
 map_int(df, function(x) sum(x == ""))
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/2b4e4eb5-395c-46e9-9872-8f86542e6702)
 
-## replace empty string with NA
+## Replace empty string with NA
 df[df==""]<-NA
 
 ## Check for missing values again:
@@ -89,7 +89,7 @@ colSums(is.na(df))
 ## Drop missing values 
 df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use subset function
 
-## check to make sure that the rows have been removed 
+## Check to make sure that the rows have been removed 
  colSums(is.na(df))
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/3774c77e-203a-4fe6-aa09-63b4c751630a)
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/e776de51-6c5d-416b-bc2f-33d8d6d26b16)
@@ -106,12 +106,12 @@ summary(df1)
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/a0e6e1d2-6e2d-40c9-8c9f-396e4828ef68)
   
-## scatterplot 
+## Scatterplot 
 ggplot(df1, aes(x=Lead.Studio, y=Rotten.Tomatoes..)) + geom_point()+ scale_y_continuous(labels = scales::comma)+coord_cartesian(ylim = c(0, 110))+theme(axis.text.x = element_text(angle = 90))
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/fc516ba1-3d98-42ea-9ee1-c5617fb1f842)
 
- ## bar chart 
+ ## Bar chart 
 ggplot(df1, aes(x=Year)) + geom_bar()
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9b0f659a-38ab-437c-8c95-8ddfc6e0590d)
@@ -125,17 +125,14 @@ write.csv(df1, "clean_df.csv")
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
 
  
- Then, I import this file clean_df into Power BI to go to the next step 5.
+ **Now I import this file clean_df into Power BI to go to the next step 5.**
 
 # Step 5: Create Power BI Dashboard 
 
-### Tips: 
-•	Feel free to add more charts apart from the ones mentioned in the next slide.  
-• For the dashboard, the company would like you to use their brand colors which are 
-  blue, green and brown. You can use light or dark shades of each color. For example, 
-  light blue and dark blue are acceptable. 
-  You can combine these colors any way that you like. For example, you can use only 
-  blue and green if you want to. 
+## Tips: 
+### For the dashboard, the company would like you to use their brand colors which are blue, green and brown. You can use light or dark shades of each color. For example, light blue and dark blue are acceptable. You can combine these colors any way that you like. For example, you can use only blue and green if you want to. 
+  
+### I format all the visuals by such as Shadow Effect, data labels, adjusting the sizes of the fonts, and choosing the correct aggregations and the colors allowed.
 
 ## 1.	The average Rotten Tomatoes ratings of each genre
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9605de70-d47a-4548-bf9b-df048d6ea5f4)
@@ -151,6 +148,8 @@ write.csv(df1, "clean_df.csv")
     
 ## 5.	The worldwide gross per genre 
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/cc2057b2-c39b-453e-8dc3-7141e79e4ba0)
+
+###  Lastly, it is a dashboard with a background image, containing all the visuals above and a Gauge, showing ‘The average and the maximum Rotten Tomatoes rating’. You can click the different parts of one of the visuals to filter the other visuals, and the corresponding number will show in the Gauge as well**
                 
 ## 6.	Dashboard
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/c0c0d221-b7cd-4666-b7e3-aa31aeb6d97e)
