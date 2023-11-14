@@ -132,7 +132,6 @@ write.csv(df1, "clean_df.csv")
 ## Tips: 
 ### For the dashboard, the company would like you to use their brand colors which are blue, green and brown. You can use light or dark shades of each color. For example, light blue and dark blue are acceptable. You can combine these colors any way that you like. For example, you can use only blue and green if you want to. 
   
-### I format all the visuals by such as Shadow Effect, data labels, adjusting the sizes of the fonts, and choosing the correct aggregations and the colors allowed.
 
 ## 1.	The average Rotten Tomatoes ratings of each genre
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9605de70-d47a-4548-bf9b-df048d6ea5f4)
@@ -149,7 +148,9 @@ write.csv(df1, "clean_df.csv")
 ## 5.	The worldwide gross per genre 
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/cc2057b2-c39b-453e-8dc3-7141e79e4ba0)
 
-###  Lastly, it is a dashboard with a background image, containing all the visuals above and a Gauge, showing ‘The average and the maximum Rotten Tomatoes rating’. You can click the different parts of one of the visuals to filter the other visuals, and the corresponding number will show in the Gauge as well**
+### I format all the visuals above by such as Shadow Effect, data labels, adjusting the sizes of the fonts, and choosing the correct aggregations and the colors allowed.
+
+###  Lastly, it is a dashboard with a background image, containing all the visuals above and a Gauge, showing ‘The average and the maximum Rotten Tomatoes ratings’. You can click the different parts of one of the visuals to filter the other visuals, and the corresponding number will show in the Gauge as well**
                 
 ## 6.	Dashboard
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/c0c0d221-b7cd-4666-b7e3-aa31aeb6d97e)
