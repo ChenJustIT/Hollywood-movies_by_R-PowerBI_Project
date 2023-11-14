@@ -16,8 +16,9 @@ https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv
  
 # Step1: Initial Exploratory Analysis by R
 
-## Load data 
-df<- read.csv("https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv")
+## Import data 
+**df**<- read.csv("https://public.tableau.com/app/sample-data/HollywoodsMostProfitableStories.csv")
+
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/3a1260b8-a18c-442e-8e60-3b62cdd58401)
 
  
@@ -29,7 +30,7 @@ View(df)
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/5ebae422-8a8b-4a14-8fb4-9026698c66c3)
 
 ## Load library: 
-install.packages("tidyverse")
+install.packages(**"tidyverse"**)
 
 WARNING: Rtools is required to build R packages but is not currently installed. Please download and install the appropriate version of Rtools before proceeding:
 https://cran.rstudio.com/bin/windows/Rtools/
@@ -43,7 +44,7 @@ The downloaded binary packages are in
 C:\Users\solve\AppData\Local\Temp\RtmpApsExq\downloaded_packages
 
 ## Import library 
-library(tidyverse)
+library(**tidyverse**)
 
 ── Attaching core tidyverse packages ───────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.1.3     ✔ readr     2.1.4
@@ -70,7 +71,7 @@ colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/4bf8a342-5369-461f-a677-488e7298ceb5)
 
   
-### During this process, we should realise that missing values include both blank values and Null values. The function "map_int" can find both kinds and the blank value should be replaced with NA before all the missing values can be dropped together. 
+### However, during this process, we should realise that missing values include both blank values and Null values. The function "map_int" can find both kinds and the blank value should be replaced with NA before all the missing values can be dropped together. 
 
 ## Use the function to find all missing values
 map_int(df, function(x) sum(x == ""))
@@ -95,8 +96,8 @@ df <- na.omit(df)      #or df <- df %>% drop_na();   or we may be able to use su
 
 # Step 3: Exploratory Data Analysis 
 
-## Create df1
-df1=na.omit(df) 
+## Create cleaned data df1
+**df1**=na.omit(df) 
 
 ## Summary Statistics: 
 summary(df1)
@@ -117,35 +118,35 @@ ggplot(df1, aes(x=Year)) + geom_bar()
 # Step 4: Export data 
 
 ## Export clean data 
-write.csv(df1, "clean_df.csv") 
+write.csv(df1, "**clean_df.csv**") 
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
 
  
- **Now I import this file clean_df into Power BI to go to the next step 5.**
+ **Next step I import this file 'clean_df.csv' into Power BI. And identiry the correct columns for each of the most suitable visuals chosen.**
 
 # Step 5: Create Power BI Dashboard 
 
 ## Tips: 
-### For the dashboard, the company would like you to use their brand colors which are blue, green and brown. You can use light or dark shades of each color. For example, light blue and dark blue are acceptable. You can combine these colors any way that you like. For example, you can use only blue and green if you want to. 
+### According to the requirements for the visuals, we should use the brand colors which are blue, green and brown. Or we can use light or dark shades for each of them. For example, light blue and dark blue are acceptable. You can combine these colors any way that you like. For example, you can use only blue and green if you want to. 
   
 
-## 1.	The average Rotten Tomatoes ratings of each genre
+## 1. Column Chart:	The average Rotten Tomatoes ratings of each genre
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/9605de70-d47a-4548-bf9b-df048d6ea5f4)
 
-## 2.	The number of movies produced per year 
+## 2. Tree Map:	The number of movies produced per year 
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/c3359c69-f0e9-4383-937e-b327a748aec8)
  
-## 3.	The audience scores for each film  
+## 3.	Table: The audience scores for each film  
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/301bf56a-4c60-4591-ba5d-5160a185e6f5)
      
-## 4.	The profitability per studio      
+## 4.	Bar Chart: The profitability per studio      
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/f30ae7ee-5ace-4714-9d8e-8ed414d4edd1)
     
-## 5.	The worldwide gross per genre 
+## 5.	Funnel: The worldwide gross per genre 
   ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/cc2057b2-c39b-453e-8dc3-7141e79e4ba0)
 
-### I format all the visuals above by such as Shadow Effect, data labels, adjusting the sizes of the fonts, and choosing the correct aggregations and the colors allowed.
+### I format all the visuals above by such as shadow effect, data labels, adjusting the sizes of the fonts, and choosing the correct aggregations and the colors allowed.
 
 ###  Lastly, it is a dashboard with a background image, containing all the visuals above and a Gauge, showing ‘The average and the maximum Rotten Tomatoes ratings’. You can click the different parts of one of the visuals to filter the other visuals, and the corresponding number will show in the Gauge as well**
                 
