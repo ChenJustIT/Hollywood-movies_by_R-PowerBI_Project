@@ -123,7 +123,7 @@ write.csv(df1, "**clean_df.csv**")
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
 
  
-## Next step I import this file 'clean_df.csv' into Power BI. And identify the data for each of the most suitable visuals chosen.
+## Next step I import this file 'clean_df.csv' into Power BI. And identify the data for each of the most suitable visuals.
 
 # Step 5: Create Power BI Dashboard 
 
@@ -148,7 +148,7 @@ write.csv(df1, "**clean_df.csv**")
 
 ### I format all the visuals above by such as shadow effect, data labels, adjusting the sizes of the fonts, and choosing the correct aggregations and the colors allowed.
 
-###  Lastly, it is a dashboard with a background image, containing all the visuals above and a Gauge, showing ‘The average and the maximum Rotten Tomatoes ratings’. You can click the different parts of one of the visuals to filter the other visuals, and the corresponding number will show in the Gauge as well**
+###  Lastly, it is a dashboard with a background image, containing all the visuals above and a Gauge, showing ‘The average and the maximum Rotten Tomatoes ratings’. You can click the different values in one of the visuals to filter the values in the other visuals, and the corresponding number will show in the Gauge as well**
                 
 ## 6.	Dashboard
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/c0c0d221-b7cd-4666-b7e3-aa31aeb6d97e)
