@@ -71,7 +71,7 @@ colSums(is.na(df))
  ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/4bf8a342-5369-461f-a677-488e7298ceb5)
 
   
-### However, during this process, we should realise that missing values include both blank values and Null values. The function "map_int" can find both kinds and the blank values should be replaced with NA before all the missing values can be dropped together. 
+### However, during this process, we should realise that missing values include both blank values and Null values. So, I should use the function "map_int" to find out both kinds and the blank values should be replaced with NA before all the missing values can be dropped together. 
 
 ## Use the function to find all missing values
 map_int(df, function(x) sum(x == ""))
