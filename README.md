@@ -117,7 +117,7 @@ ggplot(df1, aes(x=Year)) + geom_bar()
  
 # Step 4: Export data 
 
-## Export the clean data 
+## Export the cleaned data 
 write.csv(df1, "**clean_df.csv**") 
 
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
