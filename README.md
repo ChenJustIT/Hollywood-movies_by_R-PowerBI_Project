@@ -123,7 +123,7 @@ write.csv(df1, "**clean_df.csv**")
 ![image](https://github.com/ChenJustIT/R-Power-BI-Project/assets/150026038/acece8a5-6478-4e18-85f5-925d6efd64eb)
 
  
-## Next step I import this file 'clean_df.csv' into Power BI. And identify the data for each of the most suitable visuals.
+## Next step I import this Excel file 'clean_df.csv' into Power BI. And identify the data for each of the most suitable visuals.
 
 # Step 5: Create Power BI Dashboard 
 
